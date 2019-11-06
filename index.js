@@ -23,7 +23,7 @@ function viewCart() {
   if (cart.length === 0) {
     return "Your shopping cart is empty."
   } else if (cart.length === 1) {
-    line = `${line} ${cart[0].itemName} at $${cart[i].itemPrice}.`
+    line = `${line} ${cart[0].itemName} at $${cart[0].itemPrice}.`
   } else {
     for (var i = 0; i < cart.length - 1; i++) {
       line = `${line} ${cart[i].itemName} at $${cart[i].itemPrice},`
@@ -65,7 +65,7 @@ function placeOrder(cardNumber) {
   if (cardNumber === undefined) {
     return "Sorry, we don't have a credit card on file for you."
   } else {
-    var line = `Your total cost is $${total()}, which will be charged to the card ${cardNumber}`
+    var line = `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`
     cart.splice(0)
     return line
   }

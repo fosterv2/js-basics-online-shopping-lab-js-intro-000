@@ -44,6 +44,7 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var count = cart.length
+  if (count > 0) {
   var i = 0
   while (cart.length === count) {
     if (item === cart[i].itemName) {
@@ -51,6 +52,7 @@ function removeFromCart(item) {
     }
     i++
   }
+}
   if (cart.length === count) {
     return "That item is not in your cart."
   } else {
@@ -60,7 +62,7 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
-  if (cardNumber === empty) {
+  if (cardNumber === undefined) {
     return "Sorry, we don't have a credit card on file for you."
   } else {
     var line = `Your total cost is $${tota()}, which will be charged to the card ${cardNumber}`
